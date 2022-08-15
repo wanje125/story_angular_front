@@ -15,13 +15,16 @@ export class ConfirmationComponent implements OnInit {
   address: string = '';
   creditCardNumber: string = '';
   totalPrice: number = 0
+  bought: boolean = false;
 
   constructor(private router:Router, private cartService: CartBookmarkService, private confirmService: ConfirmationService) { }
 
   ngOnInit(): void {
     this.totalPrice = this.cartService.getTotalPrice()
   }
-
+  nameChanged(arg:any):void {
+    console.log("modelchanged " + arg);
+  }
   submitForm(): void {
     const confirmation: Confirm = {
       fullName: this.fullName,
@@ -30,8 +33,7 @@ export class ConfirmationComponent implements OnInit {
       total: this.totalPrice
     }
     this.confirmService.getPayment(confirmation)
-
-    alert(`Thank you for using this Market, ${this.fullName}!, totalprice: ${this.totalPrice} `)
+    this.bought = true;
 
     this.fullName = ''
     this.address = ''
@@ -39,6 +41,6 @@ export class ConfirmationComponent implements OnInit {
     this.totalPrice = 0
 
     this.cartService.destroyCart()
-    this.router.navigateByUrl('/');
+    
   }
 }

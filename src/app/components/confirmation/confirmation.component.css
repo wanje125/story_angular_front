@@ -16,3 +16,11 @@ input{
     border-radius:8px;
 }
 
+.bought{
+    text-align:center;
+    font-weight:700;
+    margin-top: 50px;
+    border: solid 1px black;
+    border-radius: 8px;
+    padding: 20px 30px;
+}

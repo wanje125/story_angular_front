@@ -15,7 +15,10 @@ export class CartBookmarkService {
   addCart(quantity: number, product: Product) {
     console.log(product);
     console.log(quantity);
-    if (this.cartList.includes(product)) {
+    const check = this.cartList.filter(item => item.id == product.id )
+    console.log(check)
+    if (check.length>0) {
+      console.log(this.cartList.filter(item => { item.id == product.id }))
       alert(`alreay ${product.name} exists`)
       return this.cartList
     } else {
