@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\components",
+    "\\app\\components\\cart",
+    "\\app\\components\\confirmation"
+  ],
+  "SelectedNode": "\\app\\components\\confirmation\\confirmation.component.html",
+  "PreviewInSolutionExplorer": false
+}

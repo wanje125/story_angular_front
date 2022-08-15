@@ -1,0 +1,10 @@
+<div class="pbox">
+  <img  routerLink="/product/{{product.id}}"  src="{{product.url}}" alt="image missing" />
+  <p>{{product.name}}</p>
+  <p>$ {{product.price}}</p>
+  <select [(ngModel)]="selectedNum">
+    <option *ngFor="let num of nums">{{num}}</option>
+  </select>
+  <button (click)="addCart(product)">Add to Cart</button>
+</div>
+

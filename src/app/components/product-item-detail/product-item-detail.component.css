@@ -1,0 +1,25 @@
+.row{
+    margin: 0px 20px;
+    align-content:center;
+}
+ h1{
+     text-align:center;
+     margin-top:40px;
+     margin-bottom:20px;
+ }
+.detail{
+    display:flex;
+    justify-content:center;
+}
+
+.img-box{
+    padding-left:20px;
+    width:200px;
+}
+.img-box > img{
+    width:100%
+}
+
+.detail-box{
+    padding: 5%;
+}

@@ -1,0 +1,20 @@
+<div class="row">
+  <h1>Product Info</h1>
+  <div class="detail">
+    <div class="img-box">
+      <img class="cart-img" src="{{product.url}}" alt="image missing" />
+    </div>
+    <div class="detail-box">
+      <p>{{product.name}}</p>
+      <p>{{product.description}}</p>
+      <p>$ {{product.price}}</p>
+      <select [(ngModel)]="selectedNum">
+        <option *ngFor="let num of nums">{{num}}</option>
+      </select>
+      <button (click)="addCart(product)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+

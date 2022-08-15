@@ -1,0 +1,16 @@
+<h1>My Cartlist</h1>
+<div class="cart">
+    <div class="cart-box" *ngFor="let cart of cartList">
+      <img class="cart-img" src="{{cart.url}}" alt="image missing" />
+      <p>{{cart.name}}</p>
+      <p>$ {{cart.price}}</p>
+      <p>{{cart.quantity}}</p>
+      <button (click)="upVote(cart.id)">+1</button>
+      <button (click)="downVote(cart.id)">-1</button>
+      <button (click)="deleteProduct(cart.id)">X</button>
+    </div>
+</div>
+<div class="payment">
+  <div class="price">total price: ${{totalPrice}}</div>
+  <button routerLink="/cart/confirmation" *ngIf="totalPrice > 0" class="payment-btn"><a >Buy</a></button>
+</div>

@@ -1,0 +1,8 @@
+.pbox {
+  padding: 5%;
+  width: 100%;
+}
+
+.pbox > img {
+    width: 100%;
+}
