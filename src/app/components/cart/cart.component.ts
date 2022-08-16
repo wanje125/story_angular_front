@@ -42,5 +42,6 @@ export class CartComponent implements OnInit {
     this.cartService.deleteCart(id)
     this.cartList = this.cartService.getCart()
     this.totalPrice = this.cartService.getTotalPrice()
+    alert(`success to delete`)
   }
 }

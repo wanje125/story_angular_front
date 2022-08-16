@@ -2,17 +2,18 @@
   <div *ngIf="!bought">
     <form class="confirm-row" #form="ngForm" (ngSubmit)="submitForm()">
       <p>Full Name:</p>
-      <input type="text" name="fullName" required minlength="3" maxlength="50" placeholder="Minimum 3 characters" (ngModelChange)="nameChanged($event)"  [(ngModel)]="fullName">
+      <input type="text" name="fullName" required minlength="3" maxlength="50" placeholder="Minimum 3 characters" (ngModelChange)="nameChanged($event)" [(ngModel)]="fullName">
       <p>Address:</p>
-      <input type="text" name="address" required minlength="6" maxlength="200" placeholder="Minimum 6 characters" (ngModelChange)="nameChanged($event)"  [(ngModel)]="address">
+      <input type="text" name="address" required minlength="6" maxlength="200" placeholder="Minimum 6 characters" (ngModelChange)="nameChanged($event)" [(ngModel)]="address">
       <p>Credit Card Number:</p>
-      <input type="text" name="creditCardNumber" required pattern="\d{16,}" minlength="16" maxlength="16" placeholder="16 digits number" (ngModelChange)="nameChanged($event)"  [(ngModel)]="creditCardNumber">
+      <input type="text" name="creditCardNumber" required pattern="\d{16,}" minlength="16" maxlength="16" placeholder="16 digits number" (ngModelChange)="nameChanged($event)" [(ngModel)]="creditCardNumber">
       <p>We'll never share your payment infomation with anyone.</p>
       <input class="primary" type="submit" [disabled]="form.invalid" value="Submit">
+      <p class="require" *ngIf="form.invalid">please check the requirements(name, address, card)</p>
     </form>
-    </div>
+
     <div class="bought" *ngIf="bought">
-      Thank you for using this market, {{fullName}}! Total price is $ {{totalPrice}}. Success.
+      Thank you for using this market, {{fullName}}! Total price is $ {{payprice}}. Success.
     </div>
   </div>
 

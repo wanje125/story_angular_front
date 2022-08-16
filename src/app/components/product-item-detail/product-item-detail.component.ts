@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product';
 import { CartBookmarkService } from '../../services/cart-bookmark.service';
 import { ProductDataService } from '../../services/product-data.service';
@@ -12,6 +12,7 @@ import { map, filter } from 'rxjs/operators';
   styleUrls: ['./product-item-detail.component.css']
 })
 export class ProductItemDetailComponent implements OnInit {
+  @Output() out: EventEmitter<string> = new EventEmitter
   // @ts-ignore
   product_list: Product[] = [];
   // @ts-ignore

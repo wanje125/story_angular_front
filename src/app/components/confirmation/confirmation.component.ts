@@ -16,7 +16,7 @@ export class ConfirmationComponent implements OnInit {
   creditCardNumber: string = '';
   totalPrice: number = 0
   bought: boolean = false;
-
+  payprice: number = 0;
   constructor(private router:Router, private cartService: CartBookmarkService, private confirmService: ConfirmationService) { }
 
   ngOnInit(): void {
@@ -32,6 +32,8 @@ export class ConfirmationComponent implements OnInit {
       creditCardNumber: this.creditCardNumber,
       total: this.totalPrice
     }
+
+    this.payprice = this.cartService.getTotalPrice()
     this.confirmService.getPayment(confirmation)
     this.bought = true;
 

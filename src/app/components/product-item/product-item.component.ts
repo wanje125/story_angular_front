@@ -10,6 +10,7 @@ import { CartBookmarkService } from '../../services/cart-bookmark.service'
 export class ProductItemComponent implements OnInit {
   // @ts-ignore
   @Input() product: Product;
+  
   selectedNum: number = 1;
   nums: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
